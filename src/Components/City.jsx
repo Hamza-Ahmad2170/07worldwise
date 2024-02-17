@@ -19,11 +19,11 @@ function City() {
 
   useEffect(() => {
     getCity(id);
-
+    console.log(11);
     // return () => {
     //   second
     // }
-  }, [id]);
+  }, [id, getCity]);
 
   const { cityName, emoji, date, notes } = currentCity;
   if (isLoading) return <Spinner />;
