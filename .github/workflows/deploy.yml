@@ -15,10 +15,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16 # Ensure this matches your project's requirements
+          node-version: 16 # Specify Node.js version compatible with your project
 
       - name: Install dependencies
         run: npm install
@@ -26,7 +26,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }} # Access the secret
+          VITE_API_URL: ${{ secrets.VITE_API_URL }} # Add the API URL from secrets
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
@@ -49,4 +49,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
