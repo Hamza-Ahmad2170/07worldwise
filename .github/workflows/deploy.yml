@@ -39,7 +39,7 @@ jobs:
         run: npm ci
       - name: Build
         env:
-          VITE_NPOINT_URL: ${{ secrets.VITE_NPOINT_URL }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
