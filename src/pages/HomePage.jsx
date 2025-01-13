@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./assets/css/HomePage.module.css";
 import PageNav from "../components/PageNav";
 
-
 export default function Homepage() {
-
-
   return (
     <main className={styles.homepage}>
       <PageNav />
