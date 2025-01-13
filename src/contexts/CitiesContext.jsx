@@ -13,7 +13,7 @@ const initialState = {
   cities: [],
   isLoading: false,
   currentCity: {},
-  error: "",
+  error: " ",
 };
 
 function reducer(state, action) {
