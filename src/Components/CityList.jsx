@@ -8,7 +8,6 @@ import CityItem from "./CityItem";
 function CityList() {
   const { isLoading, cities } = useCities();
 
-
   if (isLoading) return <Spinner />;
   if (!cities.length)
     return (

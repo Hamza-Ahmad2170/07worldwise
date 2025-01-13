@@ -19,7 +19,7 @@ function City() {
 
   useEffect(() => {
     getCity(id);
-    console.log(11);
+
     // return () => {
     //   second
     // }

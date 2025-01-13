@@ -30,7 +30,9 @@ function CityItem({ city }) {
   const { cityName, emoji, date, id, position } = city;
 
   function handleDelete(e) {
-    e.preventDefault(); 
+    e.preventDefault();
+    console.log(id);
+
     deleteCity(id);
   }
 
@@ -46,8 +48,9 @@ function CityItem({ city }) {
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>({formatDate(date)})</time>
         <button
+          type="button"
           className={styles.deleteBtn}
-          onClick={(e, id) => handleDelete(e, id)}
+          onClick={(e) => handleDelete(e)}
         >
           &times;
         </button>

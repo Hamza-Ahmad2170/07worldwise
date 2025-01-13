@@ -24,7 +24,7 @@ function Form() {
   const [emoji, setEmoji] = useState("");
   const [geocodingError, setGeocodingError] = useState(null);
 
-  const [isLoadingGeocoding, setIsloadingGeocoding] = useState("");
+  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState("");
 
   const { createCity, isLoading } = useCities();
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ function Form() {
 
     (async () => {
       try {
-        setIsloadingGeocoding(true);
+        setIsLoadingGeocoding(true);
         setGeocodingError("");
         const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
         const data = await res.json();
@@ -47,9 +47,9 @@ function Form() {
         setEmoji(convertToEmoji(data.countryCode));
       } catch (error) {
         setGeocodingError(error.message);
-        setIsloadingGeocoding(false);
+        setIsLoadingGeocoding(false);
       } finally {
-        setIsloadingGeocoding(false);
+        setIsLoadingGeocoding(false);
       }
     })();
     // return cleanUp = () => {

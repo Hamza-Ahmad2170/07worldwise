@@ -1,12 +1,12 @@
 import { createContext, useCallback, useEffect, useReducer } from "react";
 import PropTypes from "prop-types";
+import { environment } from "../utils/utils";
 
 CitiesProvider.propTypes = {
   children: PropTypes.node,
 };
 
-const baseUrl = "http://localhost:9000";
-
+const baseUrl = environment();
 const CitiesContext = createContext();
 
 const initialState = {
@@ -76,6 +76,7 @@ function CitiesProvider({ children }) {
     (async () => {
       dispatch({ type: "loading" });
       try {
+        // console.log(baseUrl);
         const res = await fetch(`${baseUrl}/cities`);
         const data = await res.json();
         dispatch({ type: "cities/loaded", payload: data });
@@ -86,18 +87,15 @@ function CitiesProvider({ children }) {
         });
       }
     })();
-
-    // return () => {
-    //   second;
-    // };
   }, []);
 
   const getCity = useCallback(
-    async function getCity(id) {
+    async function getCity(index, id) {
       if (id === currentCity.id) return;
       dispatch({ type: "loading" });
       try {
         const res = await fetch(`${baseUrl}/cities/${id}`);
+
         const data = await res.json();
         dispatch({ type: "city/loaded", payload: data });
       } catch (error) {
