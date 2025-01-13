@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./assets/css/HomePage.module.css";
-import PageNav from "../components/PageNav";
+import PagesNav from "../Components/PagesNav";
 
 export default function Homepage() {
   return (
     <main className={styles.homepage}>
-      <PageNav />
+      <PagesNav />
       <section>
         <h1>
           You travel the world.

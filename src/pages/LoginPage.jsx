@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import Button from "../Components/Button";
 import { useNavigate } from "react-router-dom";
-import PageNav from "../components/PageNav";
+import PagesNav from "../Components/PagesNav";
 
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <main className={styles.login}>
-      <PageNav />
+      <PagesNav />
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
