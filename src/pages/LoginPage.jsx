@@ -1,10 +1,10 @@
 import styles from "./assets/css/LoginPage.module.css";
-import PageNav from "../components/PageNav";
 
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import Button from "../Components/Button";
 import { useNavigate } from "react-router-dom";
+import PageNav from "../components/PageNav";
 
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
